@@ -2,7 +2,7 @@ console.log("Log-Viewer init...");
 
 const connection = new WebSocket("ws://localhost:3000");
 const logWindow = document.getElementById('log-window');
-const filePath = document.getElementById('logFilePath');
+const filePath = document.getElementById('logFilePath').value;
 
 connection.onopen = (connection) => { if (filePath) connection.send(filePath); }
 connection.onmessage = (event) => {
