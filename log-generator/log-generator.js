@@ -17,6 +17,7 @@ setInterval(() => {
         if (index === sourceLogs.length) {
             index = 0 // start at the beginning of the file
         }
+        console.log("Initializing: " + sourceLogs[index++])
         fs.writeFileSync(path.join(__dirname, "./sample.log"), sourceLogs[index++], "utf8");
         return
     }
@@ -24,6 +25,7 @@ setInterval(() => {
     if (index === sourceLogs.length) {
         index = 0 // start at the beginning of the file
     }
+    console.log("Writing: " + sourceLogs[index++])
     fs.writeFileSync(path.join(__dirname, "./sample.log"), logs + "\n" + sourceLogs[index++], "utf8");
     count++
 }, 2000);
