@@ -7,6 +7,7 @@ const { body } = require("express-validator");
 
 /* GET home page. */
 router.get("/", (req, res, next) => {
+  console.log("Request Received: /");
   res.render("index", { title: "Log Dashboard", logFile: req.query.logFile });
 });
 
